@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF49B09516F801C8B0D45323 /* Pods_FontChanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE94B28B23AF0F17A0927328 /* Pods_FontChanger.framework */; };
+		CBB8EB7D27C0D8F500318111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8EB7C27C0D8F500318111 /* AppDelegate.swift */; };
+		CBB8EB7F27C0D8F500318111 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8EB7E27C0D8F500318111 /* SceneDelegate.swift */; };
+		CBB8EB8627C0D8F700318111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB8EB8527C0D8F700318111 /* Assets.xcassets */; };
+		CBB8EB8927C0D8F700318111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB8EB8727C0D8F700318111 /* LaunchScreen.storyboard */; };
+		CBB8EB9127C0DA9000318111 /* TextFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8EB9027C0DA9000318111 /* TextFormatterViewController.swift */; };
+		CBB8EB9327C0DABC00318111 /* TextFormatterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8EB9227C0DABC00318111 /* TextFormatterView.swift */; };
+		CBF6FBBF27C13EC7001265C0 /* SetupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF6FBBE27C13EC7001265C0 /* SetupsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D4046DC9A0E106992F7C535 /* Pods-FontChanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontChanger.release.xcconfig"; path = "Target Support Files/Pods-FontChanger/Pods-FontChanger.release.xcconfig"; sourceTree = "<group>"; };
+		A9B18E76179514290F55DF59 /* Pods-FontChanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontChanger.debug.xcconfig"; path = "Target Support Files/Pods-FontChanger/Pods-FontChanger.debug.xcconfig"; sourceTree = "<group>"; };
+		BE94B28B23AF0F17A0927328 /* Pods_FontChanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontChanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB8EB7927C0D8F500318111 /* FontChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB8EB7C27C0D8F500318111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CBB8EB7E27C0D8F500318111 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CBB8EB8527C0D8F700318111 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBB8EB8827C0D8F700318111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CBB8EB8A27C0D8F700318111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBB8EB9027C0DA9000318111 /* TextFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormatterViewController.swift; sourceTree = "<group>"; };
+		CBB8EB9227C0DABC00318111 /* TextFormatterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormatterView.swift; sourceTree = "<group>"; };
+		CBF6FBBE27C13EC7001265C0 /* SetupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBB8EB7627C0D8F500318111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF49B09516F801C8B0D45323 /* Pods_FontChanger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A61FF097D25185BC8C45FED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE94B28B23AF0F17A0927328 /* Pods_FontChanger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92CB02B890CE78B6F4101A78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9B18E76179514290F55DF59 /* Pods-FontChanger.debug.xcconfig */,
+				1D4046DC9A0E106992F7C535 /* Pods-FontChanger.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CBB8EB7027C0D8F500318111 = {
+			isa = PBXGroup;
+			children = (
+				CBB8EB7B27C0D8F500318111 /* FontChanger */,
+				CBB8EB7A27C0D8F500318111 /* Products */,
+				92CB02B890CE78B6F4101A78 /* Pods */,
+				6A61FF097D25185BC8C45FED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CBB8EB7A27C0D8F500318111 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBB8EB7927C0D8F500318111 /* FontChanger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBB8EB7B27C0D8F500318111 /* FontChanger */ = {
+			isa = PBXGroup;
+			children = (
+				CBF6FBC027C13F51001265C0 /* TextFormatter */,
+				CBF6FBC127C1400E001265C0 /* SupportingFiles */,
+				CBB8EB8527C0D8F700318111 /* Assets.xcassets */,
+				CBB8EB8727C0D8F700318111 /* LaunchScreen.storyboard */,
+				CBB8EB8A27C0D8F700318111 /* Info.plist */,
+			);
+			path = FontChanger;
+			sourceTree = "<group>";
+		};
+		CBF6FBC027C13F51001265C0 /* TextFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				CBB8EB9027C0DA9000318111 /* TextFormatterViewController.swift */,
+				CBB8EB9227C0DABC00318111 /* TextFormatterView.swift */,
+				CBF6FBBE27C13EC7001265C0 /* SetupsView.swift */,
+			);
+			path = TextFormatter;
+			sourceTree = "<group>";
+		};
+		CBF6FBC127C1400E001265C0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CBB8EB7C27C0D8F500318111 /* AppDelegate.swift */,
+				CBB8EB7E27C0D8F500318111 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBB8EB7827C0D8F500318111 /* FontChanger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBB8EB8D27C0D8F700318111 /* Build configuration list for PBXNativeTarget "FontChanger" */;
+			buildPhases = (
+				BDD20892B4279A5B2A69321C /* [CP] Check Pods Manifest.lock */,
+				CBB8EB7527C0D8F500318111 /* Sources */,
+				CBB8EB7627C0D8F500318111 /* Frameworks */,
+				CBB8EB7727C0D8F500318111 /* Resources */,
+				174B89B554C1F8B160B7BC80 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FontChanger;
+			productName = FontChanger;
+			productReference = CBB8EB7927C0D8F500318111 /* FontChanger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBB8EB7127C0D8F500318111 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					CBB8EB7827C0D8F500318111 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = CBB8EB7427C0D8F500318111 /* Build configuration list for PBXProject "FontChanger" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBB8EB7027C0D8F500318111;
+			productRefGroup = CBB8EB7A27C0D8F500318111 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBB8EB7827C0D8F500318111 /* FontChanger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBB8EB7727C0D8F500318111 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB8EB8927C0D8F700318111 /* LaunchScreen.storyboard in Resources */,
+				CBB8EB8627C0D8F700318111 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		174B89B554C1F8B160B7BC80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontChanger/Pods-FontChanger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontChanger/Pods-FontChanger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FontChanger/Pods-FontChanger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDD20892B4279A5B2A69321C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FontChanger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBB8EB7527C0D8F500318111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB8EB9127C0DA9000318111 /* TextFormatterViewController.swift in Sources */,
+				CBB8EB7D27C0D8F500318111 /* AppDelegate.swift in Sources */,
+				CBB8EB7F27C0D8F500318111 /* SceneDelegate.swift in Sources */,
+				CBF6FBBF27C13EC7001265C0 /* SetupsView.swift in Sources */,
+				CBB8EB9327C0DABC00318111 /* TextFormatterView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CBB8EB8727C0D8F700318111 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBB8EB8827C0D8F700318111 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBB8EB8B27C0D8F700318111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CBB8EB8C27C0D8F700318111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CBB8EB8E27C0D8F700318111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9B18E76179514290F55DF59 /* Pods-FontChanger.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7YWVGS7V5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FontChanger/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.gellert.FontChanger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBB8EB8F27C0D8F700318111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D4046DC9A0E106992F7C535 /* Pods-FontChanger.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7YWVGS7V5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FontChanger/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.gellert.FontChanger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBB8EB7427C0D8F500318111 /* Build configuration list for PBXProject "FontChanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBB8EB8B27C0D8F700318111 /* Debug */,
+				CBB8EB8C27C0D8F700318111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBB8EB8D27C0D8F700318111 /* Build configuration list for PBXNativeTarget "FontChanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBB8EB8E27C0D8F700318111 /* Debug */,
+				CBB8EB8F27C0D8F700318111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBB8EB7127C0D8F500318111 /* Project object */;
+}
