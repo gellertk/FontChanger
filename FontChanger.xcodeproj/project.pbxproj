@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF49B09516F801C8B0D45323 /* Pods_FontChanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE94B28B23AF0F17A0927328 /* Pods_FontChanger.framework */; };
+		CB39A3EC27C275B8007295ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39A3EB27C275B7007295ED /* Constants.swift */; };
 		CBB8EB7D27C0D8F500318111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8EB7C27C0D8F500318111 /* AppDelegate.swift */; };
 		CBB8EB7F27C0D8F500318111 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8EB7E27C0D8F500318111 /* SceneDelegate.swift */; };
 		CBB8EB8627C0D8F700318111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB8EB8527C0D8F700318111 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		1D4046DC9A0E106992F7C535 /* Pods-FontChanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontChanger.release.xcconfig"; path = "Target Support Files/Pods-FontChanger/Pods-FontChanger.release.xcconfig"; sourceTree = "<group>"; };
 		A9B18E76179514290F55DF59 /* Pods-FontChanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontChanger.debug.xcconfig"; path = "Target Support Files/Pods-FontChanger/Pods-FontChanger.debug.xcconfig"; sourceTree = "<group>"; };
 		BE94B28B23AF0F17A0927328 /* Pods_FontChanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontChanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB39A3EB27C275B7007295ED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBB8EB7927C0D8F500318111 /* FontChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB8EB7C27C0D8F500318111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBB8EB7E27C0D8F500318111 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,10 +84,11 @@
 		CBB8EB7B27C0D8F500318111 /* FontChanger */ = {
 			isa = PBXGroup;
 			children = (
+				CB39A3EB27C275B7007295ED /* Constants.swift */,
 				CBF6FBC027C13F51001265C0 /* TextFormatter */,
 				CBF6FBC127C1400E001265C0 /* SupportingFiles */,
-				CBB8EB8527C0D8F700318111 /* Assets.xcassets */,
 				CBB8EB8727C0D8F700318111 /* LaunchScreen.storyboard */,
+				CBB8EB8527C0D8F700318111 /* Assets.xcassets */,
 				CBB8EB8A27C0D8F700318111 /* Info.plist */,
 			);
 			path = FontChanger;
@@ -229,6 +232,7 @@
 				CBB8EB7F27C0D8F500318111 /* SceneDelegate.swift in Sources */,
 				CBF6FBBF27C13EC7001265C0 /* SetupsView.swift in Sources */,
 				CBB8EB9327C0DABC00318111 /* TextFormatterView.swift in Sources */,
+				CB39A3EC27C275B8007295ED /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
