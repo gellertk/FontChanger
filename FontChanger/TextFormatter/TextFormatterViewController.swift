@@ -12,6 +12,7 @@ final class TextFormatterViewController: UIViewController{
     
     private var fontChangerView: UIView = {
         let view = TextFormatterView()
+        
         return view
     }()
     

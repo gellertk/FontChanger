@@ -15,6 +15,7 @@
 		CBB8EB8927C0D8F700318111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB8EB8727C0D8F700318111 /* LaunchScreen.storyboard */; };
 		CBB8EB9127C0DA9000318111 /* TextFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8EB9027C0DA9000318111 /* TextFormatterViewController.swift */; };
 		CBB8EB9327C0DABC00318111 /* TextFormatterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8EB9227C0DABC00318111 /* TextFormatterView.swift */; };
+		CBC20BD027C4019C00C9AC57 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC20BCF27C4019C00C9AC57 /* Properties.swift */; };
 		CBF6FBBF27C13EC7001265C0 /* SetupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF6FBBE27C13EC7001265C0 /* SetupsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		CBB8EB8A27C0D8F700318111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB8EB9027C0DA9000318111 /* TextFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormatterViewController.swift; sourceTree = "<group>"; };
 		CBB8EB9227C0DABC00318111 /* TextFormatterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormatterView.swift; sourceTree = "<group>"; };
+		CBC20BCF27C4019C00C9AC57 /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		CBF6FBBE27C13EC7001265C0 /* SetupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				CB39A3EB27C275B7007295ED /* Constants.swift */,
+				CBC20BCF27C4019C00C9AC57 /* Properties.swift */,
 				CBF6FBC027C13F51001265C0 /* TextFormatter */,
 				CBF6FBC127C1400E001265C0 /* SupportingFiles */,
 				CBB8EB8727C0D8F700318111 /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 				CBF6FBBF27C13EC7001265C0 /* SetupsView.swift in Sources */,
 				CBB8EB9327C0DABC00318111 /* TextFormatterView.swift in Sources */,
 				CB39A3EC27C275B8007295ED /* Constants.swift in Sources */,
+				CBC20BD027C4019C00C9AC57 /* Properties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

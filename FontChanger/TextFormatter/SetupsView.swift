@@ -10,7 +10,9 @@ import UIKit
 final class SetupsView: UIView {
     
     public weak var delegate: TextFormatterViewDelegate?
-    private var pickerViewAndProperties: [UIPickerView: [String]] = [:]
+    
+    private var properties: Properties
+    private var pickerViewAndColors: [UIPickerView: [UIColor]] = [:]
     
     private var fontSizeLabel: UILabel = {
         let label = UILabel()
@@ -39,7 +41,7 @@ final class SetupsView: UIView {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerViewAndProperties[pickerView] = Constants.colors
+        pickerViewAndColors[pickerView] = Constants.colors
         
         return pickerView
     }()
@@ -55,7 +57,6 @@ final class SetupsView: UIView {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerViewAndProperties[pickerView] = Constants.fontStyles
         
         return pickerView
     }()
@@ -86,7 +87,7 @@ final class SetupsView: UIView {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerViewAndProperties[pickerView] = Constants.colors
+        pickerViewAndColors[pickerView] = Constants.colors
         
         return pickerView
     }()
@@ -118,7 +119,10 @@ final class SetupsView: UIView {
     }()
     
     private func setupView() {
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderWidth = 2
         backgroundColor = .white
+        
         layer.borderColor = UIColor.black.cgColor
         [fontSizeLabel,
          fontSizeSlider,
@@ -223,14 +227,15 @@ final class SetupsView: UIView {
     }
     
     @objc private func fontSizeSliderValueChange(slider: UISlider) {
-        delegate?.fontSizeSliderValueChange(value: slider.value)
+        properties.fontSize = CGFloat(slider.value)
+        delegate?.didPropertiesChange(properties: properties)
     }
     
-    init() {
+    init(delegate: TextFormatterViewDelegate) {
+        self.delegate = delegate
+        self.properties = Properties()
         super.init(frame: CGRect.zero)
         setupView()
-        layer.borderColor = UIColor.lightGray.cgColor
-        layer.borderWidth = 2
     }
     
     required init?(coder: NSCoder) {
@@ -247,7 +252,7 @@ extension SetupsView: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if let values = pickerViewAndProperties[pickerView] {
+        if let values = pickerViewAndColors[pickerView] {
             return values.count
         }
         
@@ -258,10 +263,14 @@ extension SetupsView: UIPickerViewDataSource {
 
 extension SetupsView: UIPickerViewDelegate {
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        if let values = pickerViewAndProperties[pickerView] {
+    func pickerView(_ pickerView: UIPickerView,
+                    viewForRow row: Int,
+                    forComponent component: Int,
+                    reusing view: UIView?) -> UIView {
+        
+        if let colors = pickerViewAndColors[pickerView] {
             let label = UILabel()
-            label.text = values[row]
+            label.text = colors[row].accessibilityName
             label.textColor = .black
             label.textAlignment = .center
             label.font = UIFont.systemFont(ofSize: 11)
@@ -273,16 +282,20 @@ extension SetupsView: UIPickerViewDelegate {
     }
    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if let values = pickerViewAndProperties[pickerView] {
+        if let colors = pickerViewAndColors[pickerView] {
             
-            return values[row]
+            return colors[row].accessibilityName
         }
         
         return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        delegate?.textColorValueChange(color: <#T##UIColor#>)
+//        if let values = pickerViewAndColors[pickerView] {
+//            properties.textColor = pickerViewAndColors[pickerView][row]
+//        }
+        
+        delegate?.didPropertiesChange(properties: properties)
     }
     
 }
