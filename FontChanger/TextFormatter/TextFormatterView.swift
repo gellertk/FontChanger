@@ -9,7 +9,8 @@ import UIKit
 import SnapKit
 
 protocol TextFormatterViewDelegate: AnyObject {
-    func didPropertiesChange(properties: Properties)
+    func didPropertiesChange(_ properties: Properties)
+    func didStartSetup()
 }
 
 final class TextFormatterView: UIView {
@@ -20,7 +21,6 @@ final class TextFormatterView: UIView {
         let textView = UITextView()
         textView.text = Constants.defaultText
         textView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        textView.delegate = self
         
         return textView
     }()
@@ -58,11 +58,7 @@ final class TextFormatterView: UIView {
     
     init() {
         super.init(frame: CGRect.zero)
-        self.properties = Properties(textColor: textView.textColor,
-                                     shadowColor: textView.layer.shadowColor,
-                                     fontStyle: textView.font,
-                                     isShadow: textView.layer.shadowRadius > 0,
-                                     fontSize: textView.font?.pointSize)
+        self.properties = Properties()
         setupView()
     }
     
@@ -72,29 +68,33 @@ final class TextFormatterView: UIView {
     
 }
 
-extension TextFormatterView: UITextViewDelegate {
+extension TextFormatterView: TextFormatterViewDelegate {
     
-    func textViewDidChangeSelection(_ textView: UITextView) {
+    func didStartSetup() {
+        textView.resignFirstResponder()
+    }
+    
+    func didPropertiesChange(_ properties: Properties) {
+        
+        let text = textView.text as NSString
+        let currentRange = textView.selectedRange.length > 0 ? textView.selectedRange : (text.range(of: textView.text))
+        
+        if let textColor = properties.textColor {
+            textView.textStorage.addAttribute(.foregroundColor, value: textColor, range: currentRange)
+        }
+        
+        if let font = properties.font {
+            textView.textStorage.addAttribute(.font, value: font, range: currentRange)
+        }
+        
+        if let backgroundColor = properties.backgroundColor {
+            textView.textStorage.addAttribute(.backgroundColor, value: backgroundColor, range: currentRange)
+        }
+        
+        if let alignment = properties.alignment {
+            textView.textAlignment = alignment
+        }
         
     }
     
-}
-
-extension TextFormatterView: TextFormatterViewDelegate {
-    
-    func didPropertiesChange(properties: Properties) {
-        textView.textColor = properties.textColor
-    }
-    
-//    let selectedRange = textView.selectedRange
-//    //let myAttribute: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: CGFloat(value))]
-//    textView.textStorage.addAttribute(.font,
-//                                      value: UIFont.systemFont(ofSize: CGFloat(value)),
-//                                      range: selectedRange)
-//    let selectedRange = textView.selectedRange
-//    //let myAttribute: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: CGFloat(value))]
-//    textView.textStorage.addAttribute(.foregroundColor, value: color, range: selectedRange)
-//    textView.textStorage.addAttribute(.font,
-//                                      value: UIFont.systemFont(ofSize: CGFloat(value)),
-//                                      range: selectedRange)
 }

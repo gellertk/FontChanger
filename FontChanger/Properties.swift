@@ -10,9 +10,39 @@ import UIKit
 struct Properties {
     
     var textColor: UIColor?
-    var shadowColor: CGColor?
-    var fontStyle: UIFont?
-    var isShadow: Bool?
-    var fontSize: CGFloat?
+    var backgroundColor: UIColor?
+    var font: UIFont? {
+        
+        didSet {
+            guard let fontSize = fontSize else {
+                return
+            }
+            
+            if let font = font {
+                let currentFontName = font.familyName
+                self.font = UIFont(name: currentFontName, size: fontSize)
+            } else {
+                self.font = UIFont.systemFont(ofSize: fontSize)
+            }
+        }
+        
+    }
+    var fontSize: CGFloat? {
+        
+        didSet {
+            guard let fontSize = fontSize else {
+                return
+            }
+            
+            if let font = font {
+                let currentFontName = font.familyName
+                self.font = UIFont(name: currentFontName, size: fontSize)
+            } else {
+                self.font = UIFont.systemFont(ofSize: fontSize)
+            }
+        }
+        
+    }
+    var alignment: NSTextAlignment?
     
 }

@@ -12,7 +12,7 @@ final class SetupsView: UIView {
     public weak var delegate: TextFormatterViewDelegate?
     
     private var properties: Properties
-    private var pickerViewAndColors: [UIPickerView: [UIColor]] = [:]
+    private var pickerViewAndItems: [UIPickerView: [String: Any]] = [:]
     
     private var fontSizeLabel: UILabel = {
         let label = UILabel()
@@ -24,7 +24,8 @@ final class SetupsView: UIView {
     private var fontSizeSlider: UISlider = {
         let slider = UISlider()
         slider.tintColor = .lightGray
-        slider.value = 0.5
+        slider.value = Float(UIFont.systemFontSize)
+        slider.maximumValue = 100
         slider.addTarget(self, action: #selector(fontSizeSliderValueChange(slider:)), for: .valueChanged)
         
         return slider
@@ -41,7 +42,8 @@ final class SetupsView: UIView {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerViewAndColors[pickerView] = Constants.colors
+        pickerView.tag = 0
+        pickerViewAndItems[pickerView] = Constants.textColors
         
         return pickerView
     }()
@@ -57,71 +59,51 @@ final class SetupsView: UIView {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
+        pickerViewAndItems[pickerView] = Constants.fonts
+        pickerView.tag = 2
         
         return pickerView
     }()
     
-    private var numberOfLinesLabel: UILabel = {
+    private var alignmentLabel: UILabel = {
         let label = UILabel()
-        label.text = "Number of lines"
+        label.text = "Alignment"
         
         return label
     }()
     
-    private lazy var numberOfLinesPickerView: UIPickerView = {
+    private lazy var alignmentPickerView: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
-
+        pickerViewAndItems[pickerView] = Constants.alignments
+        pickerView.tag = 3
+        
         return pickerView
     }()
     
-    private var colorOfShadowLabel: UILabel = {
+    private var backgroundColorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Color of shadow"
+        label.text = "Background color"
         
         return label
     }()
     
-    private lazy var colorOfShadowPickerView: UIPickerView = {
+    private lazy var backgroundColorPickerView: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerViewAndColors[pickerView] = Constants.colors
+        pickerViewAndItems[pickerView] = Constants.backgroundColors
+        pickerView.tag = 1
         
         return pickerView
-    }()
-    
-    private var shadowLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Shadow"
-        
-        return label
-    }()
-    
-    private var shadowSwitch: UISwitch = {
-        let shadowSwitch = UISwitch()
-        
-        return shadowSwitch
-    }()
-    
-    private var worldWrapLabel: UILabel = {
-        let label = UILabel()
-        label.text = "World Wrap"
-        
-        return label
-    }()
-    
-    private var worldWrapSwitch: UISwitch = {
-        let shadowSwitch = UISwitch()
-        
-        return shadowSwitch
     }()
     
     private func setupView() {
         layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 2
         backgroundColor = .white
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:))))
         
         layer.borderColor = UIColor.black.cgColor
         [fontSizeLabel,
@@ -130,14 +112,10 @@ final class SetupsView: UIView {
          textColorPickerView,
          fontStyleLabel,
          fontStylePickerView,
-         numberOfLinesLabel,
-         numberOfLinesPickerView,
-         colorOfShadowLabel,
-         colorOfShadowPickerView,
-         shadowLabel,
-         shadowSwitch,
-         worldWrapLabel,
-         worldWrapSwitch
+         alignmentLabel,
+         alignmentPickerView,
+         backgroundColorLabel,
+         backgroundColorPickerView
         ].forEach {
             
             addSubview($0)
@@ -166,7 +144,7 @@ final class SetupsView: UIView {
         textColorPickerView.snp.makeConstraints {
             $0.top.equalTo(textColorLabel.snp.bottom)
             $0.centerX.equalTo(textColorLabel)
-            $0.height.equalTo(80)
+            $0.height.equalTo(100)
             $0.width.equalTo(150)
         }
         
@@ -182,53 +160,37 @@ final class SetupsView: UIView {
             $0.width.height.equalTo(textColorPickerView)
         }
         
-        numberOfLinesLabel.snp.makeConstraints {
-            $0.top.equalTo(textColorPickerView.snp.bottom).offset(50)
+        alignmentLabel.snp.makeConstraints {
+            $0.top.equalTo(textColorPickerView.snp.bottom).offset(80)
             $0.centerX.equalTo(textColorLabel)
         }
         
-        numberOfLinesPickerView.snp.makeConstraints {
-            $0.top.equalTo(numberOfLinesLabel.snp.bottom)
-            $0.centerX.equalTo(numberOfLinesLabel)
+        alignmentPickerView.snp.makeConstraints {
+            $0.top.equalTo(alignmentLabel.snp.bottom)
+            $0.centerX.equalTo(alignmentLabel)
             $0.width.height.equalTo(textColorPickerView)
         }
         
-        colorOfShadowLabel.snp.makeConstraints {
+        backgroundColorLabel.snp.makeConstraints {
             $0.centerX.equalTo(fontStyleLabel)
-            $0.centerY.equalTo(numberOfLinesLabel)
+            $0.centerY.equalTo(alignmentLabel)
         }
         
-        colorOfShadowPickerView.snp.makeConstraints {
-            $0.top.equalTo(colorOfShadowLabel.snp.bottom)
-            $0.centerX.equalTo(colorOfShadowLabel)
+        backgroundColorPickerView.snp.makeConstraints {
+            $0.top.equalTo(backgroundColorLabel.snp.bottom)
+            $0.centerX.equalTo(backgroundColorLabel)
             $0.width.height.equalTo(textColorPickerView)
-        }
-        
-        shadowLabel.snp.makeConstraints {
-            $0.top.equalTo(numberOfLinesPickerView.snp.bottom).offset(50)
-            $0.leading.equalTo(textColorLabel)
-        }
-        
-        shadowSwitch.snp.makeConstraints {
-            $0.centerX.equalTo(fontStyleLabel)
-            $0.centerY.equalTo(shadowLabel)
-        }
-        
-        worldWrapLabel.snp.makeConstraints {
-            $0.top.equalTo(shadowLabel.snp.bottom).offset(20)
-            $0.leading.equalTo(shadowLabel)
-        }
-        
-        worldWrapSwitch.snp.makeConstraints {
-            $0.centerX.equalTo(fontStyleLabel)
-            $0.centerY.equalTo(worldWrapLabel)
         }
         
     }
     
     @objc private func fontSizeSliderValueChange(slider: UISlider) {
         properties.fontSize = CGFloat(slider.value)
-        delegate?.didPropertiesChange(properties: properties)
+        delegate?.didPropertiesChange(properties)
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        delegate?.didStartSetup()
     }
     
     init(delegate: TextFormatterViewDelegate) {
@@ -252,7 +214,9 @@ extension SetupsView: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if let values = pickerViewAndColors[pickerView] {
+        
+        if let values = pickerViewAndItems[pickerView] {
+            
             return values.count
         }
         
@@ -268,9 +232,9 @@ extension SetupsView: UIPickerViewDelegate {
                     forComponent component: Int,
                     reusing view: UIView?) -> UIView {
         
-        if let colors = pickerViewAndColors[pickerView] {
+        if let items = pickerViewAndItems[pickerView] {
             let label = UILabel()
-            label.text = colors[row].accessibilityName
+            label.text = Array(items.keys)[row]
             label.textColor = .black
             label.textAlignment = .center
             label.font = UIFont.systemFont(ofSize: 11)
@@ -280,22 +244,31 @@ extension SetupsView: UIPickerViewDelegate {
         
         return UILabel()
     }
-   
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if let colors = pickerViewAndColors[pickerView] {
-            
-            return colors[row].accessibilityName
+        
+        if let items = pickerViewAndItems[pickerView]?.keys {
+
+            return Array(items)[row]
         }
         
         return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        if let values = pickerViewAndColors[pickerView] {
-//            properties.textColor = pickerViewAndColors[pickerView][row]
-//        }
         
-        delegate?.didPropertiesChange(properties: properties)
+        if let values = pickerViewAndItems[pickerView]?.values {
+            switch pickerView.tag {
+                case 0: properties.textColor = Array(values)[row] as? UIColor
+                case 1: properties.backgroundColor = (Array(values)[row] as? UIColor)
+                case 2: properties.font = (Array(values)[row] as? UIFont)
+                case 3: properties.alignment = (Array(values)[row] as? NSTextAlignment)
+            default:
+                break
+            }
+        }
+        
+        delegate?.didPropertiesChange(properties)
     }
     
 }
